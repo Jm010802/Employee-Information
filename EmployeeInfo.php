@@ -148,7 +148,7 @@ if (isset ($_POST['Import'])) {
         $file = fopen($filename, "r");
         while (($empData = fgetcsv($file, 10000, ",")) !== FALSE) {
 
-            $sql = "INSERT into tbl_employee (`emp_ID`,`emp_Name`,`emp_Salary`) VALUES ('$empData(0)','$empData[1]','$empData[2]')";
+            $sql = "INSERT into tbl_employee (`emp_ID`,`emp_Name`,`emp_Salary`) VALUES ('$empData[0]','$empData[1]','$empData[2]')";
 
             $result = mysqli_query($conn,$sql);
 
