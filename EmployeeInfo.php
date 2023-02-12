@@ -143,7 +143,7 @@ if(isset($_POST['searchSub'])!=''){
 if (isset ($_POST['Import'])) {
     echo $filename=$_FILES["file"]["tmp_name"];
 
-    if($_FILES["file"]["size"] > 0) {
+    if($_FILES["file"]["size"] > null) {
 
         $file = fopen($filename, "r");
         while (($empData = fgetcsv($file, 10000, ",")) !== FALSE) {
